@@ -3,9 +3,11 @@ import time
 import datetime
 import subprocess
 
+ID = sys.argv[1]
+title = sys.argv[2]
 if __name__ == "__main__":
 
-    startDeployment = int(time.mktime(time.strptime("230802224751", '%y%m%d%H%M%S'))) # ID 2203 11 18 08 16
+    startDeployment = int(time.mktime(time.strptime(ID, '%y%m%d%H%M%S'))) # ID 2203 11 18 08 16
 
     # condor_history -since 'JobCurrentStartDate<=1659315600'  -af  WMAgent_RequestName CpusUsage MATCH_Cpus CpusProvisioned ChirpCMSSW_cmsRun1_Events CMS_RequestType CMS_JobType
 
@@ -14,7 +16,7 @@ if __name__ == "__main__":
     items_ = ' '.join(items)
 
     #print("condor_history -since 'JobCurrentStartDate<=%s' -af %s" % (startDeployment, items_))
-    out = subprocess.getoutput("condor_history -since 'JobCurrentStartDate<=%s' -af %s" % (startDeployment, items_))
+    out = subprocess.getoutput("condor_history -since 'JobCurrentStartDate<=%s' -af %s | grep %s" % (startDeployment, items_, ID))
     
     # JobCurrentStartDate Time at which the job most recently began running. Measured in the number of seconds since the epoch
     #QDate: Time at which the job was submitted to the job queue. Measured in the number of seconds since the epoch (00:00:00 UTC, Jan 1, 1970).
@@ -83,7 +85,7 @@ if __name__ == "__main__":
         strOut += "%d %d %d %f %s %d\n" % (QDate[i], JobCurrentStartDate[i], JobDuration_, CpusUsage_, WMAgent_RequestName_, nEvents_)
 
     #fOut = "Run%s.txt" % runNo
-    fOut = "ES_ALL_vocms047.txt"
+    fOut = "{}.txt".format(title)
     with open(fOut, "w") as tf: tf.write(strOut)
 
     #print("/afs/cern.ch/user/c/cmst0/public/jobMonitoring/chist_%s.txt" % depId)
