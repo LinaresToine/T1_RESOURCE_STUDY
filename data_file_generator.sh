@@ -3,7 +3,7 @@
 
 ID=""
 title=""
-while getopts ":i:t" opt; do 
+while getopts ":i:t:" opt; do 
     case ${opt} in
         i) 
             ID=$OPTARG ;;
