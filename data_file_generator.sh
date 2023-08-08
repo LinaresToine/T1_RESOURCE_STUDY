@@ -21,6 +21,6 @@ if [ -z "$title" ]
 then 
     title="T1_data"
 fi
-
-python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/extract.py "$ID" "$title"
+condor_q | wc -l
+python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/extract.py "$ID" "$title" | wc -l
 
