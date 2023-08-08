@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 data_file = sys.argv[1]
-data_table = np.loadtxt(data_file, usecols = (0,1,2,3,5),delimiter = ' ')
-data_table_job = np.loadtxt(data_file, usecols = (4), dtype = str, delimiter = ' ')
+data_table = np.loadtxt("{}.txt".format(data_file), usecols = (0,1,2,3,5),delimiter = ' ')
+data_table_job = np.loadtxt("{}.txt".format(data_file), usecols = (4), dtype = str, delimiter = ' ')
 #print(data_table)
 #print(data_table_job)
 Qdate = np.zeros(len(data_table))
