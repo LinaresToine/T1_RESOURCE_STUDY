@@ -14,10 +14,12 @@ for i in range(len(data_table)):
     Qdate[i] = data_table[i,0]
     JobStart[i] = data_table[i,1]
 
-Qtime = JobStart - Qdate
+Qtime = (JobStart - Qdate)/3600
 plt.figure(figsize = (10,7))
 plt.hist(Qtime, bins = 20)
 plt.title('Time in Queue {}'.format(data_file))
+plt.xlabel("time (s)")
+plt.ylabel("# of Jobs")
 plt.savefig('Time_in_Queue {}'.format(data_file))
 plt.show()
 
