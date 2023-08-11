@@ -42,8 +42,9 @@ python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_graphs.py "$tit
 
 if [ "$title" != "T1_data" ]
 then
+    git checkout main
     git add *"$title"*
     git commit -m "Data for T1 site $title"
-    git push origin Automate_test_2 
+    git push origin main
 fi
 
