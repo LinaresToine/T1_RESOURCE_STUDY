@@ -5,7 +5,7 @@ if [ -d $BASE_DIR/WMAgent.venv3/ ]
 then
     source $BASE_DIR/WMAgent.venv3/bin/activate
 else
-    bash $BASE_DIR/wmagent-venv-deploy.sh -y -i prod -t 2.2.3.1 -d $BASE_DIR/WMAgent.venv3/
+    source $BASE_DIR/wmagent-venv-deploy.sh -y -i prod -t 2.2.3.1 -d $BASE_DIR/WMAgent.venv3/
     source $BASE_DIR/WMAgent.venv3/bin/activate
 fi
 
