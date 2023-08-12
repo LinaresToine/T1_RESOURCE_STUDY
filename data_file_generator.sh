@@ -31,7 +31,14 @@ then
 fi
 
 # Creates file and graphs in relevant T1 directory
-cd $DIR
+
+if [ -d $DIR ]
+then
+    cd $DIR
+else
+    mkdir $DIR
+    cd $DIR
+fi
 
 echo "$title"
 echo "Replay ID is $ID"
