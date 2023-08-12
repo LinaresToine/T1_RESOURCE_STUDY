@@ -261,8 +261,8 @@ echo 'config.BossAir.pluginNames = ["SimpleCondorPlugin"]' >> ./config/tier0/con
 #./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_FR_CCIN2P3 --task-type=Harvesting --pending-slots=1000 --running-slots=1000
 
 #Settings for using T1_IT_CNAF
-#./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_IT_CNAF --cms-name=T1_IT_CNAF --pnn=T1_IT_CNAF --ce-name=T1_IT_CNAF --pending-slots=20000 --running-slots=20000 --plugin=SimpleCondorPlugin
-#./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_IT_CNAF --task-type=Processing --pending-slots=10000 --running-slots=10000
+./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_IT_CNAF --cms-name=T1_IT_CNAF --pnn=T1_IT_CNAF --ce-name=T1_IT_CNAF --pending-slots=20000 --running-slots=20000 --plugin=SimpleCondorPlugin
+./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_IT_CNAF --task-type=Processing --pending-slots=10000 --running-slots=10000
 #./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_IT_CNAF --task-type=Merge --pending-slots=1000 --running-slots=1000
 #./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_IT_CNAF --task-type=Cleanup --pending-slots=1000 --running-slots=1000
 #./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_IT_CNAF --task-type=LogCollect --pending-slots=1000 --running-slots=1000
@@ -284,8 +284,8 @@ echo 'config.BossAir.pluginNames = ["SimpleCondorPlugin"]' >> ./config/tier0/con
 
 
 #Settings for using T1_UK_RAL
-./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_UK_RAL --cms-name=T1_UK_RAL --pnn=T1_UK_RAL --ce-name=T1_UK_RAL --pending-slots=20000 --running-slots=20000 --plugin=SimpleCondorPlugin
-./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_UK_RAL --task-type=Processing --pending-slots=10000 --running-slots=10000
+#./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_UK_RAL --cms-name=T1_UK_RAL --pnn=T1_UK_RAL --ce-name=T1_UK_RAL --pending-slots=20000 --running-slots=20000 --plugin=SimpleCondorPlugin
+#./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_UK_RAL --task-type=Processing --pending-slots=10000 --running-slots=10000
 #./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_UK_RAL --task-type=Merge --pending-slots=1000 --running-slots=1000
 #./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_UK_RAL --task-type=Cleanup --pending-slots=1000 --running-slots=1000
 #./config/tier0/manage execute-agent wmagent-resource-control --site-name=T1_UK_RAL --task-type=LogCollect --pending-slots=1000 --running-slots=1000
