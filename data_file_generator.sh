@@ -39,10 +39,10 @@ echo "Replay ID is $ID"
 
 echo "Generating file for this T1 site"
 echo " "
-python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/extract.py "$ID" "$title" | wc -l
+python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/extract.py "$ID" "$title" | wc -l
 echo "Generating graphs for this T1 site"
 echo " "
-python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_graphs.py "$title"
+python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/T1_graphs.py "$title"
 
 # Updates repository with new graphs and files
 if [ "$title" != "T1_data" ]
