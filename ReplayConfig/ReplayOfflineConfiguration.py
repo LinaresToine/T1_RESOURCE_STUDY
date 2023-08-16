@@ -26,6 +26,8 @@ from T0.RunConfig.Tier0Config import setStreamerPNN
 from T0.RunConfig.Tier0Config import setEnableUniqueWorkflowName
 from T0.RunConfig.Tier0Config import addSiteConfig
 from T0.RunConfig.Tier0Config import setStorageSite
+import sys
+sites = sys.argv[1]
 
 # Create the Tier0 configuration object
 tier0Config = createTier0Config()
@@ -184,6 +186,7 @@ addDataset(tier0Config, "Default",
            #archival_node="T0_CH_CERN_MSS",
            #tape_node="T1_US_FNAL_MSS",
            disk_node="T0_CH_CERN_Disk",
+           siteWhitelist=sites,
            #raw_to_disk=False,
            blockCloseDelay=1200,
            timePerEvent=5,
@@ -447,6 +450,7 @@ DATASETS = ["BTagMu"]
 
 for dataset in DATASETS:
     addDataset(tier0Config, dataset,
+               
                do_reco=True,
                write_dqm=True,
                dqm_sequences=["@common"],
