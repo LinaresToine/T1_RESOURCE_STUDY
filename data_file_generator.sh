@@ -6,7 +6,7 @@ title=""
 DIRECTORY=/afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/
 
 
-while getopts ":i:t:d:" opt; do 
+while getopts ":i:t:d:f:" opt; do 
     case ${opt} in
         i) 
             ID="$OPTARG" ;;
@@ -14,6 +14,8 @@ while getopts ":i:t:d:" opt; do
             title="$OPTARG" ;;
         d)
             DIR="$DIRECTORY$OPTARG" ;;
+        f)
+            filter="$OPTARG" ;;
     esac
 done 
 
@@ -49,8 +51,16 @@ echo " "
 python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/extract.py "$ID" "$title" | wc -l
 echo "Generating graphs for this T1 site"
 echo " "
-python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/T1_graphs.py "$title"
 
+if [ "$filter" == "PromptReco" ] || [ "$filter" == "Express" ] || [ "$filter" == "Repack" ]
+then
+    echo "Creating graphs for $filter workflow"
+    python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/T1_graphs.py "$title" "$filter"
+
+else
+    echo "Creating graphs without filtering by workflow"
+    python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/T1_graphs.py "$title"
+fi
 # Updates repository with new graphs and files
 if [ "$title" != "T1_data" ]
 then
