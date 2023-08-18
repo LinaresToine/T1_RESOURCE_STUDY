@@ -62,6 +62,9 @@ else
     python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/T1_graphs.py "$title"
 fi
 # Updates repository with new graphs and files
+
+cp ./*.png /afs/cern.ch/user/c/cmst0/www/tier0/dev/
+
 if [ "$title" != "T1_data" ]
 then
     git checkout main
