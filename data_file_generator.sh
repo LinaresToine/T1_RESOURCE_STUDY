@@ -3,7 +3,7 @@
 
 ID=""
 title=""
-DIRECTORY=/afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/
+DIRECTORY=/afs/cern.ch/work/c/cmst0/private/scripts/Replays_And_Testing/T1_RESOURCE_STUDY/
 
 
 while getopts ":i:t:d:f:" opt; do 
@@ -48,18 +48,18 @@ echo "Replay ID is $ID"
 
 echo "Generating file for this T1 site"
 echo " "
-python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/extract.py "$ID" "$title" | wc -l
+python3 /afs/cern.ch/work/c/cmst0/private/scripts/Replays_And_Testing/T1_RESOURCE_STUDY/extract.py "$ID" "$title" | wc -l
 echo "Generating graphs for this T1 site"
 echo " "
 
 if [ "$filter" == "PromptReco" ] || [ "$filter" == "Express" ] || [ "$filter" == "Repack" ]
 then
     echo "Creating graphs for $filter workflow"
-    python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/T1_graphs.py "$title" "$filter"
+    python3 /afs/cern.ch/work/c/cmst0/private/scripts/Replays_And_Testing/T1_RESOURCE_STUDY/T1_graphs.py "$title" "$filter"
 
 else
     echo "Creating graphs without filtering by workflow"
-    python3 /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/T1_graphs.py "$title"
+    python3 /afs/cern.ch/work/c/cmst0/private/scripts/Replays_And_Testing/T1_RESOURCE_STUDY/T1_graphs.py "$title"
 fi
 # Updates repository with new graphs and files
 

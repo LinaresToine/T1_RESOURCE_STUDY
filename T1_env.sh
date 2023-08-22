@@ -1,6 +1,6 @@
 #!/bin/bash
 source /afs/cern.ch/user/c/cmst0/env.sh
-BASE_DIR=/afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis
+BASE_DIR=/afs/cern.ch/work/c/cmst0/private/scripts/Replays_And_Testing
 if [ -d $BASE_DIR/WMAgent.venv3/ ]
 then
     source $BASE_DIR/WMAgent.venv3/bin/activate

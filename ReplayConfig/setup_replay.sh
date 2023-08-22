@@ -6,19 +6,19 @@ echo " "
 if [ "$answer" == ok ]
 then
     sleep 3 
-    vim /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/ReplayConfig/00_deploy_replay.sh
+    vim /afs/cern.ch/work/c/cmst0/private/scripts/Replays_And_Testing/T1_RESOURCE_STUDY/ReplayConfig/00_deploy_replay.sh
     echo "Now provide the siteWhitelist in the ReplayOfflineConfiguration.py file"
     sleep 5
-    vim /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/ReplayConfig/ReplayOfflineConfiguration.py
+    vim /afs/cern.ch/work/c/cmst0/private/scripts/Replays_And_Testing/T1_RESOURCE_STUDY/ReplayConfig/ReplayOfflineConfiguration.py
 fi
 
 echo "Updating 00_deploy_replay.sh script in /data/tier0/"
 sleep 3
-cp /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/ReplayConfig/00_deploy_replay.sh /data/tier0/00_deploy_replay.sh
+cp /afs/cern.ch/work/c/cmst0/private/scripts/Replays_And_Testing/T1_RESOURCE_STUDY/ReplayConfig/00_deploy_replay.sh /data/tier0/00_deploy_replay.sh
 
 echo "Updating ReplayOfflineConfiguration.py file in /data/tier0/admin/"
 sleep 3
-cp /afs/cern.ch/work/c/cmst0/private/scripts/T1_Analysis/T1_RESOURCE_STUDY/ReplayConfig/ReplayOfflineConfiguration.py /data/tier0/admin/ReplayOfflineConfiguration.py
+cp /afs/cern.ch/work/c/cmst0/private/scripts/Replays_And_Testing/T1_RESOURCE_STUDY/ReplayConfig/ReplayOfflineConfiguration.py /data/tier0/admin/ReplayOfflineConfiguration.py
 
 echo "Stopping agent"
 
